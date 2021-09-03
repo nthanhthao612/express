@@ -1,0 +1,11 @@
+extends ../public/layout/homepage.layout.pug
+block content
+    if cart 
+        each product in cart 
+            .cart-product-area 
+                ul 
+                    li= product.name
+                    li= product.quantity
+                    li= product.price
+                    li 
+                        img(src=product.image, alt="")

@@ -1,0 +1,26 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.search-form{
+    position: absolute;
+    right: 0px;
+    float: right;
+}
+.search-content{
+    border-radius: 5px;
+    margin: 10px;
+    width: 200px;
+    background-color: transparent;
+    text-align: center;
+}
+.search-btn{
+    margin: 5px;
+    float: right;
+}
+.pageBtn{
+    position: relative;
+    margin: 50px;
+    left: 430px;
+}

@@ -1,0 +1,14 @@
+extends ../public/layout/homepage.layout.pug
+block content
+    table.table
+        thead
+            tr
+                th(scope='col') Tên
+                th(scope='col') Avatar
+        tbody
+            if data 
+                each val in data
+                    tr
+                        td= val.username
+                        td
+                            img(src=val.avatar,width="50px",height="50px")

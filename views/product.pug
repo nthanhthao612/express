@@ -1,0 +1,155 @@
+extends ../public/layout/homepage.layout.pug
+block content
+    - const temp = listProducts.length;
+    if listProducts
+        - var i = 0;
+        while (i < temp+2)
+          - var start = i
+          - var end = start + 4
+          - var products = listProducts.slice(start,end)
+          - i=i+4
+          .row
+            each product in products
+                .col-sm-3
+                    .card(style='width: 18rem;')
+                        img.card-img-top(src=product.image, alt='Card image cap')
+                        .card-body
+                            h5.card-title= product.name
+                            span= product.describe
+                            p= product.price
+                            a.btn.btn-primary(href='cart/add/'+product.id) add to cart
+    - var n = parseInt(quantity/8)+1;
+    - var x = page;
+    - var curPage = x
+    if x >= n
+        -  curPage = (n - 1)
+    if x == 1
+        -  curPage = 2
+    - var prePage = curPage - 1;
+    - var nextPage = curPage + 1;
+    nav(aria-label='Page navigation example')
+        ul.pagination.pageBtn
+            li.page-item
+            a.page-link(href='/product?page='+1) First
+            li.page-item
+            a.page-link(href='/product?page='+(curPage-1)) Previous
+            li.page-item
+            a.page-link(href='/product?page='+prePage)= prePage
+            li.page-item
+            a.page-link(href='/product?page='+curPage)= curPage
+            li.page-item
+            a.page-link(href='/product?page='+nextPage)= nextPage
+            li.page-item
+            a.page-link(href='/product?page='+(curPage+1)) Next
+            li.page-item
+            a.page-link(href='/product?page='+n) Last
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //-         - var start = i
+    //-         - var end = start + 4 
+    //-         each val in listProducts.slice(start,end)
+    //-             li= val.name
+    //-         i = i+4
+
+    //- if listProducts
+    //-     - for (var i = 0; i < temp;i=i+4) {
+    //-         .row
+    //-             .col-sm-3
+    //-                 .card(style='width: 18rem;')
+    //-                     img.card-img-top(src=listProducts[i].image, alt='Card image cap')
+    //-                     .card-body
+    //-                         h5.card-title= listProducts[i].name
+    //-                         span= listProducts[i].describe
+    //-                         p= listProducts[i].price
+    //-                         a.btn.btn-primary(href='#') Go somewhere
+    //-             .col-sm-3
+    //-                 .card(style='width: 18rem;')
+    //-                     img.card-img-top(src=listProducts[i+1].image, alt='Card image cap')
+    //-                     .card-body
+    //-                         h5.card-title= listProducts[i+1].name
+    //-                         span= listProducts[i+1].describe
+    //-                         p= listProducts[i+1].price
+    //-                         a.btn.btn-primary(href='#') Go somewhere
+    //-             .col-sm-3
+    //-                 .card(style='width: 18rem;')
+    //-                     img.card-img-top(src=listProducts[i+2].image, alt='Card image cap')
+    //-                     .card-body
+    //-                         h5.card-title= listProducts[i+2].name
+    //-                         span= listProducts[i+2].describe
+    //-                         p= listProducts[i+2].price
+    //-                         a.btn.btn-primary(href='#') Go somewhere
+    //-             .col-sm-3
+    //-                 .card(style='width: 18rem;')
+    //-                     img.card-img-top(src=listProducts[i+3].image, alt='Card image cap')
+    //-                     .card-body
+    //-                         h5.card-title= listProducts[i+3].name
+    //-                         span= listProducts[i+3].describe
+    //-                         p= listProducts[i+3].price
+    //-                         a.btn.btn-primary(href='#') Go somewhere
+                
+    //-     - }                 
